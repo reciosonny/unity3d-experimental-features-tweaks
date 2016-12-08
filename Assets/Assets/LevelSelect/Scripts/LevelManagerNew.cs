@@ -24,7 +24,7 @@ public class LevelManagerNew : MonoBehaviour {
     void Start () {
         FillList();
         //DeleteAll();
-	}
+    }
 	
     void FillList() {
         foreach (var level in LevelList) {
@@ -38,7 +38,7 @@ public class LevelManagerNew : MonoBehaviour {
             }
             button.unlocked = level.Unlocked;
             button.GetComponent<Button>().interactable = level.IsInteractable;
-            button.GetComponent<Button>().onClick.AddListener(() => loadLevels("Level"+button.LevelText.text));
+            button.GetComponent<Button>().onClick.AddListener(() => loadLevels("Level" + button.LevelText.text));
 
             if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") > 0) {
                 button.Star1.SetActive(true);
@@ -52,7 +52,7 @@ public class LevelManagerNew : MonoBehaviour {
 
             button.transform.SetParent(Spacer);
         }
-        SaveAll();
+        //SaveAll();
     }
 
     void SaveAll() {
